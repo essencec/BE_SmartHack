@@ -5,8 +5,11 @@ Chatbot that acts as a personal assistant that allows users to (1) handle issues
 and (2) request services and information while in flight.
 
 ## Project Aim
-The app is designed to allow users to make requests, ask questions, and file complaints with Shuri, the virtual assistant chatbot. Shuri will relay necessary information
-to the user, and redirect them to other features outside of the app, such as their plane ticket via the American Airlines app.
+The app is designed to allow users to make requests, ask questions, and file complaints with Shuri, the virtual assistant chatbot. Shuri will relay necessary
+information to the user, and redirect them to other features outside of the app, such as their plane ticket via the American Airlines app.
+
+The app is intended to allow users more convenience during their flight experience, both while in the terminal and while on board. Shuri quickly provides direct
+answers for users, thus lowering interaction that may not abide by social distancing measures, and protecting both customers and employees.
 
 ### Features
 * Order food and drink in-flight; products will be delivered directly to seat
