@@ -23,7 +23,6 @@ answers for users, thus lowering interaction that may not abide by social distan
 * Pre-order food while in terminal; products can be picked up or hand-delivered
 * Guidance on items that can be brought on plane (e.g., "Shuri, can I bring this water bottle on the plane?")
 * Personal companion for first-time and/or nervous flyers
-* Boarding groups
 
 ### Tech Stack
 * Android SDK: Provide a native implementation of an Android app
