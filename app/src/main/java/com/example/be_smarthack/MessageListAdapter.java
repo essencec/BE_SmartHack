@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
@@ -92,8 +90,10 @@ public class MessageListAdapter extends RecyclerView.Adapter {
         void bind(Message message) {
             messageText.setText(message.getText());
 
+            String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+            SimpleDateFormat DateFor = new SimpleDateFormat("hh:mm");
             // Format the stored timestamp into a readable String using method.
-            timeText.setText(new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()));
+//            timeText.setText(DateFor.format(message.getDate()));
         }
     }
 
@@ -113,7 +113,8 @@ public class MessageListAdapter extends RecyclerView.Adapter {
             messageText.setText(message.getText());
 
             // Format the stored timestamp into a readable String using method.
-            timeText.setText(new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()));
+//            timeText.setText(new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()));
+//            timeText.setText("");
             nameText.setText(R.string.chatbot_name);
 
             // Insert the profile image from the URL into the ImageView.
