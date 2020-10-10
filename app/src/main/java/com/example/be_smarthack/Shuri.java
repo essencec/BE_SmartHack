@@ -13,9 +13,15 @@ import com.ibm.watson.assistant.v2.model.MessageResponse;
 import com.ibm.watson.assistant.v2.model.SessionResponse;
 
 import java.util.Arrays;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class Shuri {
-    public static void ping() {
+
+    public static String ping(final String userMessage) {
+
+        final CompletableFuture<String> completableFuture = new CompletableFuture<>();
+
         Thread thread = new Thread(new Runnable() {
 
             @Override
@@ -34,7 +40,7 @@ public class Shuri {
 
                     MessageInput input = new MessageInput.Builder()
                             .messageType("text")
-                            .text("I need an attendant.")
+                            .text(userMessage)
                             .build();
 
                     MessageOptions options = new MessageOptions.Builder("203f51f7-e733-403a-b2ab-ebc746990181", SESSION_RESPONSE.getSessionId())
@@ -44,6 +50,8 @@ public class Shuri {
                     MessageResponse response = assistant.message(options).execute().getResult();
 
                     Log.d("SHURI - RESP: ", response.getOutput().getGeneric().get(0).text());
+                    completableFuture.complete(response.getOutput().getGeneric().get(0).text());
+//                    MessageListActivity.printBotMessage(response.getOutput().getGeneric().get(0).text());
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -52,6 +60,16 @@ public class Shuri {
         });
 
         thread.start();
+        String result = "";
+        try {
+             result = completableFuture.get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return result;
 
 
         //        Log.d("SHURI", SESSION_RESPONSE.toString());

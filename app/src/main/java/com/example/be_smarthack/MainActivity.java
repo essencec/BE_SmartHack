@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         placeFragment(new HomeFragment());
 
 //        Uber.launchRide(MainActivity.this);
-        Shuri.ping();
+//        Shuri.ping();
     }
 
     public void placeFragment(Fragment fragment) {
