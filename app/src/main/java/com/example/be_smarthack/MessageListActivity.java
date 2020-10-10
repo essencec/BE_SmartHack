@@ -55,6 +55,10 @@ public class MessageListActivity extends AppCompatActivity {
                 newMessage.setIsChatBot(false);
                 newMessage.setDate(Calendar.getInstance().getTime());
 
+                if (mBinding.edittextChatbox.getText().toString().contains("Uber")){
+                    Uber.launchRide(MessageListActivity.this);
+                }
+
                 String result = Shuri.ping(mBinding.edittextChatbox.getText().toString());
 
                 mBinding.edittextChatbox.setText("");
