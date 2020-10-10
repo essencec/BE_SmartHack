@@ -14,9 +14,11 @@ import java.util.Calendar;
 
 public class MessageListActivity extends AppCompatActivity {
     private RecyclerView mMessageRecycler;
-    private MessageListAdapter mMessageAdapter;
+    static private MessageListAdapter mMessageAdapter;
 
     ActivityMessageListBinding mBinding;
+
+    static final ArrayList<Message> messageList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,7 @@ public class MessageListActivity extends AppCompatActivity {
         mBinding = ActivityMessageListBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
 
-        final ArrayList<Message> messageList = new ArrayList<>();
+
 
         messageList.add(new Message("Hi Shuri", false, Calendar.getInstance().getTime()));
         messageList.add(new Message("Hi T'Challa! How can I help you?", true,
@@ -53,14 +55,17 @@ public class MessageListActivity extends AppCompatActivity {
                 newMessage.setIsChatBot(false);
                 newMessage.setDate(Calendar.getInstance().getTime());
 
+                String result = Shuri.ping(mBinding.edittextChatbox.getText().toString());
+
                 mBinding.edittextChatbox.setText("");
                 messageList.add(newMessage);
                 mMessageAdapter.notifyDataSetChanged();
                 mMessageRecycler.smoothScrollToPosition(messageList.size());
 
-                messageList.add(new Message("Okay. Here are your in-flight options.", true, Calendar.getInstance().getTime()));
+                messageList.add(new Message(result, true, Calendar.getInstance().getTime()));
                 mMessageAdapter.notifyDataSetChanged();
             }
         });
     }
+    
 }
