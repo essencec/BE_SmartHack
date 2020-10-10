@@ -26,9 +26,6 @@ answers for users, thus lowering interaction that may not abide by social distan
 * Boarding groups
 
 ### Tech Stack
-* IBM Watson Chatbot: provides functionality for Shuri
-* Dynatrace: tracks user engagement with Shuri
-* Teradata: American Airlines flight data
-* Mastercard: pay for goods bought in terminal and onboard; ID Assist
-* Ntelicor
-* T-Mobile
+* Android SDK: Provide a native implementation of an Android app
+* IBM Watson Assistant: provides intelligent chatbot functionality for Shuri
+* Uber SDK: Provides interoperability between Shuri and Uber
