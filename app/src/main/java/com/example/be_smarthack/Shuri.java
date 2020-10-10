@@ -6,10 +6,13 @@ import com.ibm.cloud.sdk.core.http.Response;
 import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import com.ibm.watson.assistant.v2.Assistant;
 import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogSuggestion;
 import com.ibm.watson.assistant.v2.model.MessageInput;
 import com.ibm.watson.assistant.v2.model.MessageOptions;
 import com.ibm.watson.assistant.v2.model.MessageResponse;
 import com.ibm.watson.assistant.v2.model.SessionResponse;
+
+import java.util.Arrays;
 
 public class Shuri {
     public static void ping() {
@@ -31,7 +34,7 @@ public class Shuri {
 
                     MessageInput input = new MessageInput.Builder()
                             .messageType("text")
-                            .text("I am afraid")
+                            .text("I need an attendant.")
                             .build();
 
                     MessageOptions options = new MessageOptions.Builder("203f51f7-e733-403a-b2ab-ebc746990181", SESSION_RESPONSE.getSessionId())
@@ -40,7 +43,7 @@ public class Shuri {
 
                     MessageResponse response = assistant.message(options).execute().getResult();
 
-                    Log.d("SHURI - Test", response.toString());
+                    Log.d("SHURI - RESP: ", response.getOutput().getGeneric().get(0).text());
 
                 } catch (Exception e) {
                     e.printStackTrace();
