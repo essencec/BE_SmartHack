@@ -4,7 +4,7 @@
 Chatbot that acts as a personal assistant that allows users to (1) handle issues that come up while at the airport and resolve them by themselves, 
 and (2) request services and information while in flight.
 
-## Getting Started
+## Project Aim
 The app is designed to allow users to make requests, ask questions, and file complaints with Shuri, the virtual assistant chatbot. Shuri will relay necessary information
 to the user, and redirect them to other features outside of the app, such as their plane ticket via the American Airlines app.
 
