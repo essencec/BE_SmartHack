@@ -26,9 +26,16 @@ public class MessageListActivity extends AppCompatActivity {
 
         final ArrayList<Message> messageList = new ArrayList<>();
 
-        messageList.add(new Message("Hello", false, Calendar.getInstance().getTime()));
-        messageList.add(new Message("How are you?", false, Calendar.getInstance().getTime()));
-        messageList.add(new Message("I'm great!", true, Calendar.getInstance().getTime()));
+        messageList.add(new Message("Hi Shuri", false, Calendar.getInstance().getTime()));
+        messageList.add(new Message("Hi T'Challa! How can I help you?", true,
+                Calendar.getInstance().getTime()));
+        messageList.add(new Message("I'm hungry", false, Calendar.getInstance().getTime()));
+        messageList.add(new Message("Okay, would you like a flight attendant to bring you a snack?",
+                true,
+                Calendar.getInstance().getTime()));
+        messageList.add(new Message("yes", false, Calendar.getInstance().getTime()));
+        messageList.add(new Message("A flight attendant is on the way", true,
+                Calendar.getInstance().getTime()));
 
         mMessageAdapter = new MessageListAdapter(this, messageList);
         mMessageRecycler = mBinding.reyclerviewMessageList;
