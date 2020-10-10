@@ -24,7 +24,14 @@ public class MainActivity extends AppCompatActivity {
         mBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_main);
 
-        replaceFragment(new HomeFragment());
+        placeFragment(new HomeFragment());
+    }
+
+    public void placeFragment(Fragment fragment) {
+        fragmentManager
+                .beginTransaction()
+                .replace(mBinding.containerFrameLayout.getId(), fragment)
+                .commit();
     }
 
     public void replaceFragment(Fragment fragment) {

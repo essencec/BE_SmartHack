@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#0E88C3</color>
 
+    <color name="colorAARed">#d81f27</color>
+
     <color name="colorStatusBar">#000000</color>
 </resources>
