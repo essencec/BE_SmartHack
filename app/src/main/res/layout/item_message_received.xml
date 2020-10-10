@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_message_profile"
+        android:layout_width="@dimen/standard_touch_size"
+        android:layout_height="@dimen/standard_touch_size"
+        android:background="@drawable/circle"
+        android:src="@drawable/ic_android_white_24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/text_message_name"
+        android:text="Shuri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/image_message_profile"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/text_message_body"
+        android:text="Hi Shuri, how are you?"
+        android:background="@drawable/rounded_rectangle_grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:maxWidth="240dp"
+        android:breakStrategy="high_quality"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_message_name"
+        app:layout_constraintLeft_toRightOf="@+id/image_message_profile"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/text_message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_micro"
+        app:layout_constraintLeft_toRightOf="@+id/text_message_body"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_message_body" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
