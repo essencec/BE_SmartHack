@@ -14,6 +14,11 @@ public class Navigation {
         activity.finish();
     }
 
+    public static void goMessageListActivity(Activity activity) {
+        Intent i = new Intent(activity, MessageListActivity.class);
+        activity.startActivity(i);
+    }
+
     public static void switchFragment(Context context, Fragment fragment) {
         if (context == null)
             return;
